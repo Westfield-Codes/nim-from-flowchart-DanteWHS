@@ -1,7 +1,6 @@
 /*Nim Trainer by Dante*/
 /*Global varible*/
 var trainer = false;
-var winner = 0;
 var count = 0;
 
 /** 
