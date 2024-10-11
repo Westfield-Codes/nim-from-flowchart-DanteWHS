@@ -1,10 +1,12 @@
 /*Nim Trainer by Dante*/
+/*Global varible*/
 var trainer = false;
 var winner = 0;
+var count = 0;
 
 /** 
  * lets user control game type and playing again * 
- *@param none *
+ * @param none *
  * @return none *
  */
 function main() {
@@ -20,9 +22,15 @@ function main() {
  * @return none *
  */
 function playNim() {
-    var count = 0;
-    if (count<21) playerTurn();
-    else if (count<21) computerTurn();
+    count = 0
+    while (count<21) {
+        playerTurn();
+        if (count>=21) alert("You lose");
+        else if (count<21) {
+            computerTurn();
+            if (count>=21) alert("You win!");
+        }
+    }
 }
 
 /** 
@@ -37,8 +45,10 @@ function playerTurn() {
         playerTurn();
     }
     else {
-        count = count + turn;
-        alert("Count is now" + count);
+        count = parseInt(count);
+        turn = parseInt(turn);
+        count += turn;
+        alert("Count is now " + count);
     }
 }
 
@@ -59,7 +69,7 @@ function computerTurn(){
     if (trainer==true) {
         turn = 4-count%4;
     }
-    else Math.floor(Math.random()*3)+1;
+    else  turn = Math.floor(Math.random()*3)+1;
     count+=turn
     alert("I count " + turn + ". Count is now " + count);
 }
