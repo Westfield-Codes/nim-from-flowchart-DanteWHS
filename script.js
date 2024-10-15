@@ -62,7 +62,9 @@ function computerTurn(){
             turn = 3;
         case 18 :
             turn = 2;
-        case 19||20 :
+        case 19 :
+            turn = 1;
+        case 20 :
             turn = 1;
     }
     if (trainer==true) {
