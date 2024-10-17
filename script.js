@@ -22,12 +22,25 @@ function main() {
  */
 function playNim() {
     count = 0
-    while (count<21) {
-        playerTurn();
-        if (count>=21) alert("You lose");
-        else if (count<21) {
+    start = Math.random(Math.floor()*2)+1;
+    if (start==1){
+        while (count<21) {
+            playerTurn();
+            if (count>=21) alert("You lose");
+            else if (count<21) {
+                computerTurn();
+                if (count>=21) alert("You win!");
+            }
+        }
+    }
+    if (start==2){
+        while (count<21) {
             computerTurn();
-            if (count>=21) alert("You win!");
+            if (count>=21) alert("You Win!");
+            else if (count<21) {
+                playerTurn();
+                if (count>=21) alert("You Lose");
+            }
         }
     }
 }
