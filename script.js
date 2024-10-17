@@ -36,7 +36,7 @@ function playNim() {
     if (start==2){
         while (count<21) {
             computerTurn();
-            if (count>=21) alert("You Win!");
+            if (count>=21) alert("You Win");
             else if (count<21) {
                 playerTurn();
                 if (count>=21) alert("You Lose");
