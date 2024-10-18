@@ -15,6 +15,7 @@ function main() {
     if (again==true) main();
 }
 
+
 /** 
  * playNim Runs Nim, with player first then computer, and says who wins  * 
  *@param none * 
@@ -32,13 +33,14 @@ function playNim() {
     }
 }
 
+
 /** 
 * playerTurn gets a turn from the user and checks if it is cheating with recursion * 
 *@param none * 
 * @return none *
 */
 function playerTurn() {
-    var turn = prompt("Count, 1-3");
+    turn = prompt("Count, 1-3");
     if (turn>3 || turn<1) {
         alert("Cheater!");
         playerTurn();
@@ -53,24 +55,25 @@ function playerTurn() {
 
 /** 
  * computerTurn gets the cpu turn without making it lose on purpose. Plays diffently if trainer is enabled * 
- *@param none * 
+ * @param none *
  * @return none *
  */
-function computerTurn(){
+function computerTurn() {
     switch (count) {
         case 17 :
             turn = 3;
+            break;
         case 18 :
             turn = 2;
-        case 19 :
+            break;
+        case 19 || 20 :
             turn = 1;
-        case 20 :
-            turn = 1;
+            break;
     }
     if (trainer==true) {
         turn = 4-count%4;
     }
-    else  turn = Math.floor(Math.random()*3)+1;
-    count+=turn
+    else if (trainer==false) turn = Math.floor(Math.random()*3)+1;
+    count+=turn;
     alert("I count " + turn + ". Count is now " + count);
 }
