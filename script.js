@@ -22,7 +22,6 @@ function main() {
  */
 function playNim() {
     count = 0
-    let start = Math.random(Math.floor()*2)+1;
     while (count<21) {
         playerTurn();
         if (count>=21) alert("You lose");
