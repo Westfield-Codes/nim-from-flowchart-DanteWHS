@@ -22,28 +22,17 @@ function main() {
  */
 function playNim() {
     count = 0
-    start = Math.random(Math.floor()*2)+1;
-    if (start==1){
-        while (count<21) {
-            playerTurn();
-            if (count>=21) alert("You lose");
-            else if (count<21) {
-                computerTurn();
-                if (count>=21) alert("You win!");
-            }
-        }
-    }
-    if (start==2){
-        while (count<21) {
+    let start = Math.random(Math.floor()*2)+1;
+    while (count<21) {
+        playerTurn();
+        if (count>=21) alert("You lose");
+        else if (count<21) {
             computerTurn();
-            if (count>=21) alert("You Win");
-            else if (count<21) {
-                playerTurn();
-                if (count>=21) alert("You Lose");
-            }
+            if (count>=21) alert("You win!");
         }
     }
 }
+
 
 /** 
 * playerTurn gets a turn from the user and checks if it is cheating with recursion * 
@@ -51,7 +40,7 @@ function playNim() {
 * @return none *
 */
 function playerTurn() {
-    var turn = prompt("Count, 1-3");
+    turn = prompt("Count, 1-3");
     if (turn>3 || turn<1) {
         alert("Cheater!");
         playerTurn();
@@ -69,7 +58,7 @@ function playerTurn() {
  * @param none *
  * @return none *
  */
-function computerTurn(){
+function computerTurn() {
     switch (count) {
         case 17 :
             turn = 3;
